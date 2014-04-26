@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="jungle" class="de.wiese24.springlearning.Jungle">
+		<property name="largest">
+			<bean class="de.wiese24.springlearning.Animal">
+				<constructor-arg value="Kurt"></constructor-arg>
+				<constructor-arg value="Elephant"></constructor-arg>
+			</bean>
+		</property>
+		<property name="animals">
+			<list>
+				<bean class="de.wiese24.springlearning.Animal">
+					<constructor-arg value="Nero"></constructor-arg>
+					<constructor-arg value="Tiger"></constructor-arg>
+				</bean>
+				<bean class="de.wiese24.springlearning.Animal">
+					<constructor-arg value="Mathilda"></constructor-arg>
+					<constructor-arg value="Turtle"></constructor-arg>
+				</bean>
+				<bean class="de.wiese24.springlearning.Animal">
+					<constructor-arg value="Paula"></constructor-arg>
+					<constructor-arg value="Cebra"></constructor-arg>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+
+</beans>
