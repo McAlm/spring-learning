@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="onCreate" default-destroy-method="onDestroy">
+
+	<bean id="person" class="de.wiese24.springlearning.Person"
+		scope="singleton" init-method="init" destroy-method="onDestroy"
+		factory-method="getInstance">
+		<constructor-arg name="id" value="777"></constructor-arg>
+		<constructor-arg name="name" value="Maxe"></constructor-arg>
+		<property name="taxId" value="777"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+	<bean id="person2" class="de.wiese24.springlearning.Person"
+		scope="singleton" init-method="init" destroy-method="onDestroy"
+		factory-bean="personFactory" factory-method="createPerson">
+		<constructor-arg name="id" value="666"></constructor-arg>
+		<constructor-arg name="name" value="Bob"></constructor-arg>
+		<property name="taxId" value="999"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+	<bean id="address" class="de.wiese24.springlearning.Address">
+		<constructor-arg name="street" value="1 Church Lane"></constructor-arg>
+		<constructor-arg name="postcode" value="9876"></constructor-arg>
+		<constructor-arg name="city" value="Parlington"></constructor-arg>
+	</bean>
+	<bean id="personFactory"
+		class="de.wiese24.springlearning.PersonFactory">
+	</bean>
+</beans>

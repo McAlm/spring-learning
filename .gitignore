@@ -1,5 +1,9 @@
 *.class
 .metadata
+.settings
+.project
+.classpath
+target
 RemoteSystemsTempFiles
 Servers
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="fruitBasket"
+		class="de.wiese24.springlearning.FruitBasket">
+	<constructor-arg value="Johns basket"></constructor-arg>
+	<constructor-arg>
+	<!-- set will weed out duplicates -->
+		<list>
+			<value>apple</value>
+			<value>orange</value>
+			<value>kiwi</value>
+			<value>pear</value>
+			<value>orange</value>
+		</list>
+	</constructor-arg>
+	</bean>
+</beans>
