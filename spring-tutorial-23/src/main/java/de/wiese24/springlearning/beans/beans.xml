@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byType">
+
+	<bean id="logger" class="de.wiese24.springlearning.Logger"
+		autowire="default" />
+	<bean id="fileWriter" class="de.wiese24.springlearning.FileWriter"
+		primary="true" />
+	<bean id="panda" class="de.wiese24.springlearning.FileWriter" />
+	<bean id="consoleWriter" class="de.wiese24.springlearning.ConsoleWriter" />
+	<bean id="squirrel" class="de.wiese24.springlearning.ConsoleWriter"
+		autowire-candidate="false" />
+</beans>
