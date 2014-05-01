@@ -4,6 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-	<context:annotation-config></context:annotation-config>
-	<context:component-scan base-package="de.wiese24.springlearning"></context:component-scan>
+	<bean id="robot" class="de.wiese24.springlearning.Robot">
+		<property name="speech" value="#{randomText.text}"/>
+		<property name="id" value="#{randomText.text?.length()}" />
+	</bean>
+	
+	<bean id="randomText" class="de.wiese24.springlearning.RandomText">
+	</bean>
 </beans>
